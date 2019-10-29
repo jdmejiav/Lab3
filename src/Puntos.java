@@ -25,8 +25,6 @@ public class Puntos {
       if (!next.equals("")){
         for (int  i=0;i<testCases;i++){
           path.push (sc.nextLine());
-
-
         }
         int nforbidden = sc.nextInt();
         for (int  i=0;i<nforbidden;i++){
