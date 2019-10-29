@@ -20,18 +20,21 @@ public class Puntos {
     }
   }
   private void exce(Scanner sc,int testCases){
-    while(sc.hasNext()){
-      System.out.println("LLega acá");
-      for (int  i=0;i<testCases;i++){
-        path.push (sc.nextLine());
-      }
-      int nforbidden = sc.nextInt();
-      for (int  i=0;i<nforbidden;i++){
-        forbidden.push (sc.nextLine());
-      }
-      if (sc.hasNext())
-      sc.nextLine();
+    String next = "";
+    while(sc.hasNextLine()){
+      if (!next.equals("")){
+        for (int  i=0;i<testCases;i++){
+          path.push (sc.nextLine());
 
+
+        }
+        int nforbidden = sc.nextInt();
+        for (int  i=0;i<nforbidden;i++){
+          forbidden.push (sc.nextLine());
+        }
+    }
+      if (sc.hasNext())
+      next=sc.nextLine();
     }
   }
   private void firstInsdex(){
