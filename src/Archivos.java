@@ -13,7 +13,7 @@ public class Archivos {
     System.out.println("Ingrese La ruta del archivo ");
     System.out.print("==>");
     //String ruta = sc.nextLine();
-    retorno = new File ("entrada.in");
+    retorno = new File ("../entrada.in");
   }catch (Exception e){
     e.printStackTrace();
   }

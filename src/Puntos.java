@@ -8,36 +8,34 @@ public class Puntos {
   boolean isPosible=true;
   public Puntos (File file){
       path = new LinkedList();
-      leerArchivo(file);
-  }
-  private void leerArchivo(File file){
-    try{
-      Scanner sc = new Scanner (file);
+      Scanner sc = new Scanner(file);
       int testCases = sc.nextInt();
-      exce(sc,testCases);
+      leerArchivo(sc, testCases);
+
+  }
+  private void leerArchivo(Scanner sc,int testCases){
+    try{
+        while (sc.hasNext()){
+          readTestCases(sc,testCases);
+          int nForbiddenCases = sc.nextInt();
+          readForbidden(sc,nForbiddenCases);
+        }
+
     }catch (Exception e){
       e.printStackTrace();
     }
   }
-  private void exce(Scanner sc,int testCases){
-    String next = "";
-    while(sc.hasNextLine()){
-      if (!next.equals("")){
-        for (int  i=0;i<testCases;i++){
-          path.push (sc.nextLine());
-        }
-        int nforbidden = sc.nextInt();
-        for (int  i=0;i<nforbidden;i++){
-          forbidden.push (sc.nextLine());
-        }
-    }
-      if (sc.hasNext())
-      next=sc.nextLine();
-    }
+  private void readTestCases(Scanner sc,int testCases){
+      for (int i =0;i<testCases;i++){
+        path.add(sc.nextLine());
+      }
   }
-  private void firstInsdex(){
-
-
-
+  private void readForbidden(Scanner sc,int nForbiddenCases){
+      for (int i =0;i<nForbiddenCases;i++){
+          path.add(sc.nextLine());
+      }
+      if (sc.hasNextLine()){
+        sc.nextLine();
+      }
   }
 }
