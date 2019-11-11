@@ -1,8 +1,10 @@
-import java.io.File;
 import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.File;
 
 public class Archivos {
-  public Archivos (){
+
+  public Archivos ()throws FileNotFoundException{
 
   Puntos puntos = new Puntos (seleccionarArchivo());
   }

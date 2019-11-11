@@ -45,11 +45,34 @@ public class LinkedList {
     StringBuilder sb = new StringBuilder();
     sb.append("[");
     while (temp.getNext()!=null){
-      sb.append(" "+temp.getData());
       temp = temp.getNext();
+      sb.append(" "+temp.getData());
     }
+
     sb.append(temp.getData()+" ]");
     System.out.println(sb.toString());
+  }
+  public boolean isEmpty(){
+    return head!=null;
+  }
+  public int size(){
+    int c = 0;
+    if (head == null){
+      return 0;
+    }else if (head.getNext()==null){
+      return 1;
+    }else {
+      Node temp = head;
+
+      while(temp.getNext()!=null){
+        temp = temp.getNext();
+        c++;
+      }
+      c++;
+    }
+
+    return c;
+
   }
   public void PushToList(String data){
     /*data = data.replace(" ","");
